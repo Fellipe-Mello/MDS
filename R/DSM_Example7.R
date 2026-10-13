@@ -1,5 +1,5 @@
 getwd()
-setwd("F:/Doutorado/Producoes/pereira barreto/Novos Dados") # Adjusting directory
+setwd("DIRETORIO/SUBPASTA") # Adjusting directory
 
 # Adding packages ----
 
@@ -658,7 +658,7 @@ print(CTCFit.RF.A)
 varImpPlot(CTCFit.RF.A$finalModel, scale=T)
 importance(CTCFit.RF.A$finalModel)
 map.CTC.RF.A <- predict(CTCFit.RF.A, newdata = tempD)
-map.CTC.RF.A <- expm1(map.CTC.RF.A)   #é o antilog
+map.CTC.RF.A <- expm1(map.CTC.RF.A)   #Ã© o antilog
 map.CTC.RF.A <- cbind(data.frame(tempD[, c("x", "y")]), map.CTC.RF.A)
 summary(map.CTC.RF.A)
 map.CTC.RF.Raster.A <- rasterFromXYZ(as.data.frame(map.CTC.RF.A[, 1:3]))
@@ -881,7 +881,7 @@ conditionalQuantile(modData, obs = "obs", mod = "mod", type = "model")
 
 
 
-# Correlação MO e SF --------------------------------
+# CorrelaÃ§Ã£o MO e SF --------------------------------
 PI.pred <- read.csv("MO_SF_cor.csv", header = T, sep = ";")
 colnames(PI.pred)
 str(PI.pred)
@@ -901,7 +901,7 @@ corrplot(PI.cor, p.mat = res1$p, sig.level = .05)
 corrplot(PI.cor, p.mat = res1$p, insig = "label_sig", pch.col = "gray", sig.level = .05,
          method = "number", type = "upper")
 
-#Validação
+#ValidaÃ§Ã£o
 PI.graf <- read.csv("MO_SF_cor.csv", header = T, sep = ";")
 str(PI.graf)
 PI.graf$MO.PE.RF <- PI.graf$MO.gkg - PI.graf$MO.RF 
