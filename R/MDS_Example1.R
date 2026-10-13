@@ -8,7 +8,7 @@ library(GGally)
 library(ggcorrplot)
 
 # Abrir Banco de Dados do Henrique
-setwd('C:/Users/fellipe.alcantara/OneDrive - GATEC S A GESTAO AGROINDUSTRIAL/Fellipe_OneDriver/ASCANA')
+setwd('DIRETORIO/SUBPASTA')
 list.files()
 
 bd <- read.csv("BD_Ascana.csv", sep = ",")
@@ -282,7 +282,7 @@ HOFD - Horizontal Overland Flow Distance'
 #######################################################################################################################
 #######################################################################################################################
 # Abrindo os Dados do GeoCIS
-setwd('C:/Users/fellipe.alcantara/OneDrive - GATEC S A GESTAO AGROINDUSTRIAL/Fellipe_OneDriver/BD_Solos/Mod_Pira')
+setwd('DIRETORIO/SUBPASTA')
 list.files()
 
 bd <- read.csv("bd_Modelagem_2.csv", sep = ";")
@@ -450,7 +450,7 @@ plot(V_raster)
 
 
 #Save the predicted map##
-setwd("C:/Users/fellipe.alcantara/OneDrive - GATEC S A GESTAO AGROINDUSTRIAL/Fellipe_OneDriver/ASCANA/Pred_Maps_2")
+setwd("DIRETORIO/SUBPASTA")
 
 writeRaster(Sand_raster, "CTC_B.tif",     overwrite=TRUE)
 writeRaster(V_raster,    "V_B.tif",    overwrite=TRUE)
