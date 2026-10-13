@@ -8,7 +8,7 @@ library(GGally)
 library(ggcorrplot)
 
 # Abrir Banco de Dados do Henrique
-setwd('C:/Users/fellipe.alcantara/OneDrive - GATEC S A GESTAO AGROINDUSTRIAL/Fellipe_OneDriver/BD_Solos/Mod_Pira')
+setwd('DIRETORIO/SUBPASTA')
 list.files()
 
 bd <- read.csv("bd_modelagem_completo.csv", sep = ";")
@@ -32,7 +32,7 @@ bd <- PTS_Model_NA
 # CORRELAÇÃO E PLOT
 mydata.cor = cor(bd_cor[,c(1:7,11:13,27:39)], method = c("spearman"))
 
-setwd('C:/Users/fellipe.alcantara/OneDrive - GATEC S A GESTAO AGROINDUSTRIAL/Fellipe_OneDriver/ASCANA')
+setwd('DIRETORIO/SUBPASTA')
 tiff("Correlacao.tif", width = 1000, height = 1000, res = 100) 
 ggcorrplot(mydata.cor,
            hc.order = TRUE,
@@ -64,7 +64,7 @@ CTC_RF          <- train(x = bd[,c(4:19)],
                           trControl = trainControl(method = "cv", number = 10))
 
 # Abrir SYSI
-setwd("C:/Users/fellipe.alcantara/OneDrive - GATEC S A GESTAO AGROINDUSTRIAL/Fellipe_OneDriver/ESTER/Raster")
+setwd("DIRETORIO/SUBPASTA")
 list.files(pattern = "\\.tif$")
 SYSI <- stack("SYSI.tif") ##before the / is the folder name
 SYSI[SYSI == 0] <- NA  
@@ -131,7 +131,7 @@ plot(OM_RF_pred)
 plot(CTC_RF_pred)
 
 ##Save the predicted map##
-setwd("C:/Users/fellipe.alcantara/OneDrive - GATEC S A GESTAO AGROINDUSTRIAL/Fellipe_OneDriver/ESTER/Pred_Maps")
+setwd("DIRETORIO/SUBPASTA")
 
 writeRaster(C_RF_pred,    "C.tif",     overwrite=TRUE)
 writeRaster(OM_RF_pred,    "MO.tif",    overwrite=TRUE)
