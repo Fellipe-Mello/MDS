@@ -3,7 +3,7 @@ library(raster)
 library(caret)
 
 # Abrir SYSI
-setwd("C:/Fellipe/BENRI/DSM/Covariates")
+setwd("DIRETORIO/SUBPASTA")
 SYSI <- stack("SYSI.tif") ##before the / is the folder name
 SYSI[SYSI == 0] <- NA  ##set 0 values as NA
 SYSI[SYSI < 0] <- NA  ##set 0 values as NA
