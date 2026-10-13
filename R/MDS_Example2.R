@@ -5,7 +5,7 @@ library(terra)
 list.files()
 
 # Abrir SYSI
-setwd("C:/Fellipe/BENRI/DSM/Covariates")
+setwd("DIRETORIO/SUBPASTA")
 SYSI <- stack("SYSI.tif") ##before the / is the folder name
 SYSI[SYSI == 0] <- NA  ##set 0 values as NA
 SYSI[SYSI < 0] <- NA  ##set 0 values as NA
@@ -20,7 +20,7 @@ plot(SYSI)
 "CNBL.tif"
 "RSP.tif"
 
-setwd("C:/Fellipe/BD_Solos/Mod_Pira/Covariates")
+setwd("DIRETORIO/SUBPASTA")
 #Leitura do DEM
 DEM <- list.files(paste(getwd()), pattern = "DEM.tif$")
 DEM <- raster(DEM)
@@ -71,7 +71,7 @@ bd <- bd[,c(8,9,33,34,35,38)]
 
 write.csv(bd, "BD_GEOCIS_MDS.csv")
 
-setwd("C:/Fellipe/BD_Solos/Mod_Pira/Covariates")
+setwd("DIRETORIO/SUBPASTA")
 list.files()
 
 
