@@ -3,10 +3,10 @@
 install.packages("rgdal")
 library(rgdal)
 # Read this shape file with the rgdal library. 
-setwd("F:/Doutorado/Dados_Doc/Shapefiles/Drenagem/Dre_Pira")
+setwd("DIRETORIO/SUBPASTA")
 getwd()
 
-shapefile <- readOGR(dsn = "F:/Doutorado/Dados_Doc/Shapefiles/Drenagem/Dre_Pira", 
+shapefile <- readOGR(dsn = "DIRETORIO/SUBPASTA", 
                      layer = "Angulos_Terreno")
 
 
@@ -15,4 +15,4 @@ Sinuo_Geologia <- read.csv("sinuo_geologia_Benito_reclass.csv", header = TRUE, s
 head(Sinuo_Geologia)
 summary(Sinuo_Geologia)
 
-write.csv(shapefile@data, file="F:/Doutorado/Dados_Doc/Shapefiles/Drenagem/Dre_Pira/sinuo_geologia_Benito_reclass.csv")
+write.csv(shapefile@data, file="DIRETORIO/SUBPASTA.csv")
