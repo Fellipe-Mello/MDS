@@ -8,10 +8,10 @@ library(GGally)
 library(ggcorrplot)
 
 # Abrir Banco de Dados do Henrique
-setwd('C:/Users/fellipe.alcantara/OneDrive - GATEC S A GESTAO AGROINDUSTRIAL/Fellipe_OneDriver/BD_Solos/Mod_Pira')
+setwd('DIRETORIO/SUBPASTA')
 list.files()
 
-bd <- read.csv("BD_Henrique.csv", sep = ";")
+bd <- read.csv("ARQUIVO.csv", sep = ";")
 
 colnames(bd)
 
@@ -30,7 +30,7 @@ bd <- PTS_Model_NA
 # CORRELAÇÃO E PLOT
 mydata.cor = cor(bd_cor[,c(1:7,11:13,27:39)], method = c("spearman"))
 
-setwd('C:/Users/fellipe.alcantara/OneDrive - GATEC S A GESTAO AGROINDUSTRIAL/Fellipe_OneDriver/ASCANA')
+setwd('DIRETORIO/SUBPASTA')
 tiff("Correlacao.tif", width = 1000, height = 1000, res = 100) 
 ggcorrplot(mydata.cor,
            hc.order = TRUE,
@@ -63,7 +63,7 @@ Silt_RF          <- train(x = bd[,c(4:19)],
 
 
 # Abrir SYSI
-setwd("C:/Users/fellipe.alcantara/OneDrive - GATEC S A GESTAO AGROINDUSTRIAL/Fellipe_OneDriver/ESTER/Raster")
+setwd("DIRETORIO/SUBPASTA")
 list.files(pattern = "\\.tif$")
 SYSI <- stack("SYSI.tif") ##before the / is the folder name
 SYSI[SYSI == 0] <- NA  
@@ -133,7 +133,7 @@ plot(Clay_RF_pred)
 plot(Silt_RF_pred)
 
 ##Save the predicted map##
-setwd("C:/Users/fellipe.alcantara/OneDrive - GATEC S A GESTAO AGROINDUSTRIAL/Fellipe_OneDriver/ESTER/Pred_Maps")
+setwd("DIRETORIO/SUBPASTA")
 
 writeRaster(Sand_RF_pred,    "Sand.tif",     overwrite=TRUE)
 writeRaster(Clay_RF_pred,    "Clay.tif",    overwrite=TRUE)
@@ -176,7 +176,7 @@ HOFD - Horizontal Overland Flow Distance'
 #######################################################################################################################
 #######################################################################################################################
 # Abrindo os Dados do GeoCIS
-setwd('C:/Users/fellipe.alcantara/OneDrive - GATEC S A GESTAO AGROINDUSTRIAL/Fellipe_OneDriver/BD_Solos/Mod_Pira')
+setwd('DIRETORIO/SUBPASTA')
 list.files()
 
 bd <- read.csv("bd_Modelagem_2.csv", sep = ";")
@@ -296,7 +296,7 @@ V_RF <- train(x = bd_V_cal[,c(2:20)],
 #######################################################################################################################
 #######################################################################################################################
 #######################################################################################################################
-setwd('C:/Users/fellipe.alcantara/OneDrive - GATEC S A GESTAO AGROINDUSTRIAL/Fellipe_OneDriver/ASCANA')
+setwd('DIRETORIO/SUBPASTA')
 list.files()
 
 bd <- read.csv("Recomendacao.csv", sep = ";")
@@ -344,7 +344,7 @@ plot(V_raster)
 
 
 #Save the predicted map##
-setwd("C:/Users/fellipe.alcantara/OneDrive - GATEC S A GESTAO AGROINDUSTRIAL/Fellipe_OneDriver/ASCANA/Pred_Maps_2")
+setwd("DIRETORIO/SUBPASTA")
 
 writeRaster(Sand_raster, "CTC_B.tif",     overwrite=TRUE)
 writeRaster(V_raster,    "V_B.tif",    overwrite=TRUE)
