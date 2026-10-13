@@ -5,7 +5,7 @@ library(ggcorrplot)
 library(Cubist)
 library(sf)
 
-setwd('C:/Users/fellipe.alcantara/OneDrive - GATEC S A GESTAO AGROINDUSTRIAL/Fellipe OneDriver/BD_Solos/Mod_Pira')
+setwd('DIRETORIO/SUBPASTA')
 list.files()
 
 bd <- read.csv("bd_Modelagem_2.csv", sep = ";")
@@ -136,13 +136,13 @@ dev.off()
 '
 # Opening the rasters
 # Abrir SYSI
-setwd('C:/Users/fellipe.alcantara/OneDrive - GATEC S A GESTAO AGROINDUSTRIAL/Fellipe OneDriver/BD_Solos/Mod_Pira/Covariates')
+setwd('DIRETORIO/SUBPASTA')
 SYSI <- stack("SYSI_Pira_UTM.tif") ##before the / is the folder name
 SYSI[SYSI == 0] <- NA  ##set 0 values as NA
 SYSI[SYSI < 0] <- NA  ##set 0 values as NA
 
 
-setwd('C:/Users/fellipe.alcantara/OneDrive - GATEC S A GESTAO AGROINDUSTRIAL/Fellipe OneDriver/BD_Solos/Mod_Pira/Covariates')
+setwd('DIRETORIO/SUBPASTA')
 list.files()
 #Leitura do DEM
 DEM <- list.files(paste(getwd()), pattern = "DEM.tif$")
